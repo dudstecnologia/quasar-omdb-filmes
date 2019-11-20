@@ -1,14 +1,17 @@
 <template>
   <q-page padding>
-    <p>Detalhes</p>
+    <p>Detalhes, id: {{ id }}</p>
   </q-page>
 </template>
 
 <script>
 export default {
+  props: [
+    'id'
+  ],
   data () {
     return {
-
+      // id: '',
     }
   },
   created () {
