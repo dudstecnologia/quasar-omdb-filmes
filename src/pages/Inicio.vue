@@ -57,9 +57,6 @@ export default {
   methods: {
     getFilmes (pesquisa, pagina) {
       this.$emit('progresso', true)
-
-      console.log("Entrou aqui, pagina: " + pagina)
-
       this.statusPesquisa = true;
 
       if(pesquisa) {
@@ -70,8 +67,7 @@ export default {
 
       this.$axios.get(url)
         .then((res) => {
-          console.log(res.data)
-
+          // console.log(res.data)
           if (pesquisa || pagina == 1) {
             this.filmes = res.data.results
           } else {
@@ -85,21 +81,17 @@ export default {
           this.$emit('progresso', false)
         })
         .catch((err) => {
-          console.log(err)
-
+          // console.log(err)
           this.statusPesquisa = false
           this.$emit('progresso', false)
         });
-    },
-    detalhesFilme(id) {
-      console.log('Selecionou: ' + id)
     },
     onLoad (index, done) {
       if(!this.statusPesquisa) {
         this.paginaAtual++
         this.getFilmes(null, this.paginaAtual)
       }
-    done()
+      done()
     }
   },
   watch: {
