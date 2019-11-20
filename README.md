@@ -1,6 +1,6 @@
-# Filmes OMDb (quasar-omdb-filmes)
+# Filmes themoviedb
 
-Projeto de estudo sobre Quasar e API
+Projeto de estudo sobre Quasar e API (themoviedb)
 
 ## Install the dependencies
 ```bash

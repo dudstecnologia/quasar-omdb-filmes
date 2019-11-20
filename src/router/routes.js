@@ -4,12 +4,12 @@ const routes = [
     path: '/',
     component: () => import('layouts/LayoutBase.vue'),
     children: [
-      { path: '', component: () => import('pages/Inicio.vue') }
+      { path: '', component: () => import('pages/Inicio.vue') },
+      { path: 'detalhes', component: () => import('pages/Detalhes.vue') }
     ]
   }
 ]
 
-// Always leave this as last one
 if (process.env.MODE !== 'ssr') {
   routes.push({
     path: '*',

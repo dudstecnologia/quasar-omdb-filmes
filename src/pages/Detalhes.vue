@@ -6,5 +6,13 @@
 
 <script>
 export default {
+  data () {
+    return {
+
+    }
+  },
+  created () {
+    this.$emit('altera-titulo', 'Detalhes');
+  },
 }
 </script>
